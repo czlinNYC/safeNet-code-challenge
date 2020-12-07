@@ -1,4 +1,5 @@
 export const calculateChange = (drawer, amount) => {
+    console.log("fire")
     let newDrawer = drawer
     let bills = ["100", "50","20", "10","5","1"];
   const recursiveBillCount = (denominations, remainder) => {  
@@ -78,6 +79,7 @@ export const resetBalance = () => {
 }
 
 export const selectOperation = (drawerState, code) => {
+    console.log(code)
     let allowedCodes =  RegExp('W|I|Q|R');
     let pass = allowedCodes.test(code)
     if(pass === false ) {
@@ -86,12 +88,13 @@ export const selectOperation = (drawerState, code) => {
 
     if (code[0] === "W") {
         let amount = code.slice(2);
+        console.log(amount, drawerState)
         return calculateChange(drawerState, amount)
     } else if (code[0]=== "R") {
         return resetBalance();
     } else if (code[0]=== "I"){
         return showDrawer(drawerState)
     } else if (code[0] ==="Q") {
-        close();
+  
     }
 }

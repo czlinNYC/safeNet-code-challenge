@@ -1,9 +1,24 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import './index.css';
 import Button from './components/Button';
 import Command from './components/Command';
 
 const App = () => {
+  const [drawer, setDrawer] = useState({
+    "1": 10,
+    "5": 10,
+    "10": 10,
+    "20": 10,
+    "50": 10,
+    "100": 10
+    })
+  const [inputBar, setInputBar] = useState("")
+  const [output, setOutput] = useState("")
+  useEffect(()=>{
+    console.log(output);
+  })
+
+
   return (
     <div className="app-container">
       <div id="calculator-body">
@@ -21,14 +36,17 @@ const App = () => {
           <Button value={"0"}/>
           <div className="calculator-button"></div>
         </div>
-          <input id="input-bar"></input>
+          <input id="input-bar" value={inputBar}onChange={(e)=>setInputBar(e.target.value)}></input>
         <div className="command-tray">
-          <Command cap="Submit"/>
-          <Command cap="Clear"/>
+          <Command cap="Submit" 
+            drawer={drawer} 
+            code={inputBar} 
+            liftOutput={setOutput}
+            setDrawer={setDrawer}/>
+          <div className="command-button" cap="Clear" />
         </div>
 
-        <div id="output">
-
+        <div id="output">{output}
         </div>
 
       </div>
