@@ -5,7 +5,7 @@ As its a pretty simple app, I didn't bother with comments.
 
 yarn install 
 
-"yarn run test" for the test script
+"yarn run test" for the test script (press a after it runs)
 "yarn start" to run it
 
 It was made with create react app and only dependency is Jest
