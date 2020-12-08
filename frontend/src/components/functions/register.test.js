@@ -77,6 +77,10 @@ expect(showDrawer(testStateFour, "$20$1$100")).toMatchObject({
 test('Correctly rejects ill formated codes codes', ()=> {
 expect(showDrawer(testStateFour, "$20$1%$100")).toBe("Invalid Command");
 })
+test('Correctly rejects non denominations', ()=> {
+    expect(showDrawer(testStateFour, "$20$1%$101")).toBe("Invalid Command");
+    })
+
 test('Correctly refills drawer', ()=> {
 expect(resetBalance()).toMatchObject({
     "1": 10,
