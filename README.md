@@ -14,6 +14,8 @@ Has around 70-80% testing coverage.
 
 I actually enjoyed this test. About me I am a full stack developer. I prefer front because I like styling. However I realized after starting this test it was totally focused on TDD, regex and recursion... so I focused on those and didn't bother styling. 
 
+Had a test suite malfunction(which i could not solve after 3 hours) and attempted to rm -rf... but I had forgotten to push to the repo so I lost everything. Lucky visual studio code had the files still open as (deleted) and I was able to copy them over.
+
 Weather you decide to move forward or not with my application, please some feedback on the code would be appreciated. christoff123@gmail.com Christopher Lin
 
 Thanks! It was a positive experience. I enjoyed this code test.
