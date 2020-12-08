@@ -20,6 +20,9 @@ const Command = ({cap, drawer,code, liftOutput, setDrawer}) => {
 
     const handleClick = () => {
         let operation = code[0];
+        if(operation === "Q") {
+            window.close();
+        }
         let response =selectOperation(drawer, code);
         if (response === "Invalid Command") {
             liftOutput("Invalid Command");
@@ -34,7 +37,7 @@ const Command = ({cap, drawer,code, liftOutput, setDrawer}) => {
         } else if (response && operation === 'I') {
             let output =  parseDrawer(response);
             liftOutput(output); 
-        }
+        } 
     }
 
     return <div className="command-button" onClick={handleClick}>
