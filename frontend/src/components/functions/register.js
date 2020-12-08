@@ -45,7 +45,6 @@ export const showDrawer = (drawerState, code) => {
     keys.shift();
     
     keys.forEach((key)=> {
-        console.log(allowedBills.test(key), "bills test")
         if(allowed.test(key) === false || allowedBills.test(key) === false) {
             fail = true;
         }
