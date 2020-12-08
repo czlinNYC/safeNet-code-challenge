@@ -47,19 +47,7 @@ export const showDrawer = (drawerState, code) => {
         if(allowed.test(key) === false || allowedBills.test(key) === false) {
             fail = true;
         }
-        if (key=== "20") {
-            returnDrawer["20"] = drawerState["20"]
-        } else if (key=== "10") {
-            returnDrawer["10"] = drawerState["10"]
-        } else if (key=== "5") {
-            returnDrawer["5"] = drawerState["5"]
-        } else if (key=== "1") {
-            returnDrawer["1"] = drawerState["1"]
-        } else if (key=== "50") {
-            returnDrawer["50"] = drawerState["50"]
-        } else if (key=== "100") {
-            returnDrawer["100"] = drawerState["100"]
-        } 
+        returnDrawer[key] = drawerState[key]
     })
     if (fail) {
         return "Invalid Command";
