@@ -39,12 +39,13 @@ export const processDivide = (denomination, amount, previousBillCount)=> {
 
 export const showDrawer = (drawerState, code) => {
     let keys = code.split("$");
+    let allowedBills = RegExp('1|5|10|20|50|100')
     let returnDrawer = {}
     let allowed = RegExp('^[0-9]+$')
     let fail = false;
     keys.shift();
     keys.forEach((key)=> {
-        if(allowed.test(key) === false) {
+        if(allowed.test(key) === false || allowedBills.test(key) === false) {
             fail = true;
         }
         if (key=== "20") {
@@ -79,7 +80,6 @@ export const resetBalance = () => {
 }
 
 export const selectOperation = (drawerState, code) => {
-    console.log(code)
     let allowedCodes =  RegExp('W|I|Q|R');
     let pass = allowedCodes.test(code)
     if(pass === false ) {
@@ -92,8 +92,8 @@ export const selectOperation = (drawerState, code) => {
         return calculateChange(drawerState, amount)
     } else if (code[0]=== "R") {
         return resetBalance();
-    } else if (code[0]=== "I"){
-        return showDrawer(drawerState)
+    } else if (code[0]=== "I") {
+        return showDrawer(drawerState, code)
     } else if (code[0] ==="Q") {
   
     }
