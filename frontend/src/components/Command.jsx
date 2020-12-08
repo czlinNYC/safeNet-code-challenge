@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {selectOperation, showDrawer} from './functions/register'
 
 const Command = ({cap, drawer,code, liftOutput, setDrawer}) => {
