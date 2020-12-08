@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import './index.css';
 
 import Command from './components/Command';
@@ -14,9 +14,6 @@ const App = () => {
     })
   const [inputBar, setInputBar] = useState("")
   const [output, setOutput] = useState("")
-  useEffect(()=>{
-    console.log(output);
-  })
 
   const clear = () => {
     setOutput("");
