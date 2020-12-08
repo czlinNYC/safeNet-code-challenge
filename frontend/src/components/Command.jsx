@@ -12,7 +12,6 @@ const Command = ({cap, drawer,code, liftOutput, setDrawer}) => {
                 parsed = <div>{parsed}${keys[i]}- {response[keys[i]]}</div>                } 
             else {
                 parsed = <div>{parsed}${keys[i]} - {response[keys[i]]}</div> 
-                console.log(parsed, "parsed")
             }
         }
         return parsed;

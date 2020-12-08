@@ -38,12 +38,14 @@ export const processDivide = (denomination, amount, previousBillCount)=> {
 
 export const showDrawer = (drawerState, code) => {
     let keys = code.split("$");
-    let allowedBills = RegExp('1|5|10|20|50|100')
+    let allowedBills = RegExp('^1$|^5$|^10$|^20$|^50$|^100$')
     let returnDrawer = {}
     let allowed = RegExp('^[0-9]+$')
     let fail = false;
     keys.shift();
+    
     keys.forEach((key)=> {
+        console.log(allowedBills.test(key), "bills test")
         if(allowed.test(key) === false || allowedBills.test(key) === false) {
             fail = true;
         }
